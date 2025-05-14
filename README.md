@@ -6,7 +6,7 @@ This repository contains code and data to reproduce the results of the paper "Co
 ## Data
 
 The data used in the paper is available in the `data` folder. In particular, the `data` folder contains 9 subfolders, each containing the data for a different region considered in the paper (Bogotá, Chicago, Gauteng, Jakarta, London, Madrid, New York, Rio de Janeiro, and Santiago de Chile). Each subfolder contains the following folders/files:
-- `contact_matrix`: contains a `contact_matrix.npz` file, which contains the contact matrix for the region.
+- `contact_matrix`: contains a `contact_matrix.npz` file, which contains the contact matrix for the region. Contact matrices are obtained from [Mistry et al, 2021](https://www.nature.com/articles/s41467-020-20544-y).
 - `epi_data`: contains a `epi_data.csv` file, which contains the epidemiological data for the region, with daily new cases and deaths.
 - `google-mobility-report`: contains a `google_mobility_data.csv` file, which contains the Google mobility data for the region, from the [Google Mobility Report](https://www.google.com/covid19/mobility/).
 - `population-data`: contains a `pop_data_Nk.csv` file, which contains the population in different age groups (0-9,10-19,20-24,25-29,30-39,40-49,50-59,60-69,70-79,80+) for the region.
