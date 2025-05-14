@@ -13,7 +13,6 @@ def SEIR_function(inf_t0 : int,
                   mu : float,
                   ifr : List[float],
                   Delta : float, 
-                  Delta_std: float,
                   dc : float, 
                   Dc : float, 
                   C : List[List[float]], 
@@ -24,8 +23,10 @@ def SEIR_function(inf_t0 : int,
                   long_term : bool = False,
                   short_term : bool = True, 
                   k : int = 1, 
+                  Delta_std: float = 1,
                   deaths_delay : str = "fixed", 
-                  daily_steps : float = 12) -> dict: 
+                  daily_steps : float = 12, 
+                  seed = None) -> dict: 
     """
     SEIR model with mobility data used to modulate the force of infection.
     Parameters
@@ -50,13 +51,18 @@ def SEIR_function(inf_t0 : int,
         @param long_term (bool, optional): if True also long-term memory mechanism is used. Defaults to False
         @param short_term (bool, optional): if True short-term memory mechanism is used. Defaults to True
         @param k (int, optional): parameter that sets the speed of behaviour change. Defaults to 1
+        @param Delta_std (float): delay in deaths (std). Defaults to 1
         @param deaths_delay (str): method to calculate deaths delay. Defaults to "fixed" (alternative is "gamma")
-        @param dt (int): simulation time step. Defaults to 1
+        @param daily_steps (int): simulation time step. Defaults to 12
+        @param seed (int): random seed
     Return 
     ------
         @return: dictionary of compartments and deaths
     """
     
+    if seed is not None: 
+        np.random.seed(seed)
+
     # number of age groups 
     n_age = len(Nk)
     
