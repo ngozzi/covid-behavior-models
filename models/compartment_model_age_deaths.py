@@ -16,7 +16,6 @@ def SEIR_compartment(inf_t0 : int,
                      r : float, 
                      ifr : List[float],
                      Delta : float, 
-                     Delta_std: float,
                      C : List[List[float]], 
                      detection_rate : float,
                      dates : List[datetime], 
@@ -25,7 +24,9 @@ def SEIR_compartment(inf_t0 : int,
                      gamma : float = 0.0, 
                      deaths_delay : str = "fixed", 
                      daily_steps : float = 12, 
-                     behavioral_mechanism : str = "global") -> dict: 
+                     Delta_std: float = 1,
+                     behavioral_mechanism : str = "global",
+                     seed = None) -> dict: 
     """
     SEIR model with additional compartments to model behavioural reaction.
     Parameters
@@ -41,21 +42,25 @@ def SEIR_compartment(inf_t0 : int,
         @param mu_B (float): rate at which susceptibles give up behaviour change
         @param r (float): protection factor for behaviour change
         @param ifr (List[float]): infection fatality rate by age groups
-        @param Delta (float): delay in deaths (mean)
-        @param Delta_std (float): delay in deaths (std)        
+        @param Delta (float): delay in deaths (mean)    
         @param C (List[List[float]]): contact matrix
         @param detection_rate (float): fraction of deaths that are reported
         @param dates (List[datetime]): list of simulation dates
         @param hemisphere (int): hemisphere (0: north, 1: tropical, 2: south)
         @param seasonality_min (float): seasonality parameter
         @param gamma (float): rate that regulates global behaviour change. Defaults to 0.0
-        @param deaths_delay (str): method to calculate deaths delay. Defaults to "fixed" (alternative is "gamma")
-        @param dt (int): simulation time step. Defaults to 1
-
+        @param deaths_delay (str): method to calculate deaths delay. Defaults to "fixed" (alternative is "gamma")aily_steps (int): simulation time step. Defaults to 12
+        @param daily_steps (int): simulation time step. Defaults to 12
+        @param Delta_std (float): delay in deaths (std). Defaults to 1
+        @param behavioral_mechanism (str): mechanism to compute the behavioral change. Defaults to "global" (alternative is "local")
+        @param seed (int): random seed
     Return 
     ------
         @return: dictionary of compartments and deaths
     """
+
+    if seed is not None: 
+        np.random.seed(seed)
 
     # number of age groups 
     n_age = len(Nk)

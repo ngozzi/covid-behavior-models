@@ -75,12 +75,12 @@ def SEIR_mobility(inf_t0 : int,
                   mu : float,
                   ifr : List[float],
                   Delta : float, 
-                  Delta_std: float, 
                   C : List[List[float]], 
                   detection_rate : float, 
                   dates : List[datetime], 
                   hemisphere : int, 
                   seasonality_min : float, 
+                  Delta_std: float = 1,
                   deaths_delay : str = "fixed", 
                   daily_steps : float = 12, 
                   seed = None) -> dict: 
@@ -97,15 +97,16 @@ def SEIR_mobility(inf_t0 : int,
         @param eps (float): inverse of latent period
         @param mu (float): inverse of infectious period
         @param ifr (List[float]): infection fatality rate by age groups
-        @param Delta (float): delay in deaths (mean)
-        @param Delta_std (float): delay in deaths (std)   
+        @param Delta (float): delay in deaths (mean)   
         @param C (List[List[float]]): contact matrix
         @param detection_rate (float): fraction of deaths that are reported
         @param dates (List[datetime]): list of simulation dates
         @param hemisphere (int): hemisphere (0: north, 1: tropical, 2: south)
         @param seasonality_min (float): seasonality parameter
+        @param Delta_std (float): delay in deaths (std). Defaults to 1
         @param deaths_delay (str): method to calculate deaths delay. Defaults to "fixed" (alternative is "gamma")
-        @param dt (int): simulation time step. Defaults to 1
+        @param daily_steps (int): simulation time step. Defaults to 12
+        @param seed (int): random seed
     Return 
     ------
         @return: dictionary of compartments and deaths
