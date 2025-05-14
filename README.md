@@ -35,4 +35,4 @@ The code used to reproduce the results is available in the `models` folder. In p
 
 Additionally, the file `utils.py` contains the functions used to calibrate the models via Approximate Bayesian Computation (ABC), while the file `constants.py` contains the values of the fixed parameters used in the models.
 
-We provide an example of how to run the models in the [`example.ipynb` notebook](example.ipynb).
+We provide an example of how to run the models in the [`example.ipynb`](example.ipynb) notebook.
