@@ -3,7 +3,7 @@
 [![Published in PNAS](https://img.shields.io/badge/Published%20in-PNAS-blue)](https://doi.org/10.1073/pnas.2421993122)
 
 
-This repository contains code and data to reproduce the results of the paper "Comparative Evaluation of Behavioral Epidemic Models Using COVID-19 Data" by [Gozzi et al, 2024](https://www.medrxiv.org/content/10.1101/2024.11.08.24316998v1). 
+This repository contains code and data to reproduce the results of the paper "Comparative Evaluation of Behavioral Epidemic Models Using COVID-19 Data" by [Gozzi et al, 2025](https://www.pnas.org/doi/abs/10.1073/pnas.2421993122). 
 
 ## Data
 
