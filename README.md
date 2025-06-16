@@ -1,5 +1,5 @@
 # Behavioral-epidemic models for COVID-19
-![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-orange.svg)
 [![Published in PNAS](https://img.shields.io/badge/Published%20in-PNAS-blue)](https://doi.org/10.1073/pnas.2421993122)
 
 
