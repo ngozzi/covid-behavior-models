@@ -38,3 +38,23 @@ The code used to reproduce the results is available in the `models` folder. In p
 Additionally, the file `utils.py` contains the functions used to calibrate the models via Approximate Bayesian Computation (ABC), while the file `constants.py` contains the values of the fixed parameters used in the models.
 
 We provide an example of how to run the models in the [`example.ipynb`](example.ipynb) notebook.
+
+## Citation 
+To reference our work, please use the following citation:
+```
+@article{
+    doi:10.1073/pnas.2421993122,
+    author = {Nicolò Gozzi  and Nicola Perra  and Alessandro Vespignani },
+    title = {Comparative evaluation of behavioral epidemic models using COVID-19 data},
+    journal = {Proceedings of the National Academy of Sciences},
+    volume = {122},
+    number = {24},
+    pages = {e2421993122},
+    year = {2025},
+    doi = {10.1073/pnas.2421993122},
+    URL = {https://www.pnas.org/doi/abs/10.1073/pnas.2421993122},
+    eprint = {https://www.pnas.org/doi/pdf/10.1073/pnas.2421993122}
+}
+
+```
+
